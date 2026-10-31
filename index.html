@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e8e9e6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>РосДом — строительство частных домов и подбор недвижимости</title>
+<style>
+:root{--forest:#172b32;--sage:#82b96f;--white:#f7f5ef;--champagne:#d9c9a8}
+*{box-sizing:border-box}
+html{min-height:100%;background:#e8e9e6}
+body{margin:0;min-height:100vh;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#202a28;background:
+ radial-gradient(ellipse at 18% 8%,rgba(255,255,255,.96),transparent 34%),
+ radial-gradient(ellipse at 88% 78%,rgba(103,157,126,.20),transparent 36%),
+ linear-gradient(145deg,#f4f3ef 0%,#e2e5e2 48%,#d2d8d5 100%);display:flex;align-items:center;justify-content:center;padding:28px 16px;overflow:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E")}
+.wrap{width:100%;max-width:490px;position:relative}
+.card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.86);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(247,248,245,.48));box-shadow:0 32px 90px rgba(48,62,56,.17),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(255,255,255,.55);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+.top{padding:34px 30px 27px}
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:35px}
+.logo{width:54px;height:54px;flex:0 0 54px;border:1px solid rgba(130,185,111,.76);border-radius:17px;display:grid;place-items:center;color:#273b32;background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(226,235,229,.52));box-shadow:inset 0 1px 0 rgba(255,255,255,.32)}
+.logo svg{width:34px;height:34px}
+.brand-name{font-size:27px;letter-spacing:2.2px;font-weight:800;line-height:1.05}
+.brand-caption{font-size:10px;letter-spacing:2.1px;text-transform:uppercase;color:#26754e;margin-top:7px}
+.eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#638574;margin-bottom:15px}
+h1{font-size:clamp(25px,6vw,31px);line-height:1.18;letter-spacing:-.65px;margin:0 0 14px;font-weight:620}
+h1 em{font-style:normal;color:#287a52}
+.lead{font-size:15px;line-height:1.65;color:rgba(34,47,41,.76);margin:0;max-width:360px}
+.rule{height:1px;margin:0 30px;background:linear-gradient(90deg,transparent,rgba(76,105,89,.24),transparent)}
+.actions{padding:24px 25px 25px;display:grid;gap:11px}
+.glass-btn{min-height:66px;display:flex;align-items:center;gap:13px;padding:13px 16px;border:1px solid rgba(255,255,255,.88);border-radius:23px;text-decoration:none;color:#f8fffb;background:radial-gradient(ellipse at 14% -25%,rgba(255,255,255,.96),transparent 43%),radial-gradient(ellipse at 88% 120%,rgba(111,222,166,.32),transparent 52%),linear-gradient(132deg,rgba(35,119,79,.91),rgba(41,151,101,.76) 34%,rgba(24,111,75,.86) 60%,rgba(17,82,58,.91));box-shadow:inset 0 1.5px 1px rgba(255,255,255,.98),inset 1px 0 1px rgba(255,255,255,.60),inset -1px 0 1px rgba(255,255,255,.35),inset 0 -2px 4px rgba(5,48,30,.30),0 15px 28px rgba(36,80,57,.22),0 3px 7px rgba(36,80,57,.13);position:relative;isolation:isolate;overflow:hidden;backdrop-filter:blur(34px) saturate(190%);-webkit-backdrop-filter:blur(34px) saturate(190%);transition:transform .22s ease,filter .22s ease}
+.glass-btn:before{content:"";position:absolute;z-index:-1;inset:1px;border-radius:22px;background:linear-gradient(118deg,rgba(255,255,255,.48) 0%,rgba(255,255,255,.08) 22%,transparent 43%,rgba(255,255,255,.14) 70%,rgba(255,255,255,.30) 100%);pointer-events:none}
+.glass-btn:after{content:"";position:absolute;left:8%;right:8%;top:1px;height:30px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.18) 42%,rgba(255,255,255,0));filter:blur(5px);pointer-events:none}
+.glass-btn .btn-text,.glass-btn .icon,.glass-btn .arrow{position:relative;z-index:1}.glass-btn:hover{transform:translateY(-2px);filter:brightness(1.12) saturate(1.12)}.glass-btn:active{transform:scale(.985);filter:brightness(1.18)}
+.icon{width:32px;height:32px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(145deg,rgba(255,255,255,.38),rgba(219,255,235,.10));border:1px solid rgba(255,255,255,.48);box-shadow:inset 0 1px 0 rgba(255,255,255,.62),0 3px 8px rgba(0,0,0,.10);flex:0 0 32px}
+.icon svg{width:17px;height:17px;stroke:#e8fff1;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn-text{font-size:13.5px;font-weight:650;letter-spacing:.12px;flex:1}
+.arrow{font-size:19px;color:rgba(247,255,250,.90);padding-left:4px}
+.contact{padding:0 30px 26px;display:flex;align-items:center;justify-content:center;gap:12px;color:rgba(42,59,50,.62);font-size:11px;line-height:1.5;letter-spacing:2.5px;text-transform:uppercase}.location-line{border-top:1px solid rgba(46,79,59,.15);padding-top:18px;width:100%;text-align:center}
+.person{color:#24342c;font-size:13px;font-weight:600}
+.phone{color:rgba(36,55,44,.82);text-decoration:none;white-space:nowrap}
+.foot{margin-top:19px;text-align:center;font-size:10px;letter-spacing:2.4px;color:rgba(43,65,52,.45);text-transform:uppercase}
+@media(max-width:390px){.top{padding:28px 23px 24px}.rule{margin:0 23px}.actions{padding:20px 18px 22px}.contact{padding:0 23px 24px}.brand{margin-bottom:29px}.brand-name{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+    <section class="top">
+      <div class="brand">
+        <div class="logo" aria-label="Логотип РосДом">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 40V12L29 3" stroke="#e7eee3" stroke-width="4.2" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><path d="M7 40H29" stroke="#e7eee3" stroke-width="4.2" fill="none" stroke-linecap="square"/><path d="M33 5v35M38 8v32M43 11v29" stroke="#72b64b" stroke-width="3.4" fill="none" stroke-linecap="square"/></svg>
+        </div>
+        <div><div class="brand-name">РОСДОМ</div><div class="brand-caption">Дома · Недвижимость</div></div>
+      </div>
+      <h1>Строительство частных домов<br><em>и подбор недвижимости</em></h1>
+      <p class="lead">Помогаем найти решение для вашего будущего дома и недвижимости в Санкт-Петербурге.</p>
+    </section>
+    <div class="rule"></div>
+    <section class="actions" aria-label="Связаться с РосДом">
+      <a class="glass-btn" href="tel:+79194016458">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 16.5v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 10.2 18a19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 1.9 3.2 2 2 0 0 1 3.9 1h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.8 9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.9 2.6Z"/></svg></span>
+        <span class="btn-text">Позвонить</span><span class="arrow">↗</span>
+      </a>
+      <a class="glass-btn" href="https://rosdom-spb.ru/" target="_blank" rel="noopener">
+        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.8 9h18.4M2.8 15h18.4M12 2.5c2.4 2.6 3.5 5.8 3.5 9.5s-1.1 6.9-3.5 9.5C9.6 18.9 8.5 15.7 8.5 12S9.6 5.1 12 2.5Z"/></svg></span>
+        <span class="btn-text">Официальный сайт</span><span class="arrow">↗</span>
+      </a>
+      <a class="glass-btn" href="https://yandex.ru/maps/-/CXfnILOM" target="_blank" rel="noopener">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 5.2-8 12-8 12S4 15.2 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span class="btn-text">Мы на карте</span><span class="arrow">↗</span>
+      </a>
+    </section>
+    <footer class="contact"><div class="location-line">Санкт-Петербург</div></footer>
+  </main>
+  <div class="foot">РОСДОМ &nbsp;·&nbsp; САНКТ-ПЕТЕРБУРГ</div>
+</div>
+</body>
+</html>
